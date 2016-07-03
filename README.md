@@ -7,7 +7,7 @@ The Constrained pLanning for Autonomy with RisK (CLARK) generates optimal, chanc
 Download CLARK and its submodules using the following commands
 
 ```
-git clone git@git.mers.csail.mit.edu:enterprise/clark.git
+git clone https://github.com/phrqas/clark
 cd clark
 git submodule init
 git submodule update
