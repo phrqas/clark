@@ -1,0 +1,9 @@
+[submodule "rmpyl"]
+	path = rmpyl
+	url = https://github.com/phrqas/rmpyl
+[submodule "pytemporal"]
+	path = pytemporal
+	url = https://github.com/phrqas/pytemporal
+[submodule "rao"]
+	path = rao
+	url = https://github.com/phrqas/rao-star
