@@ -42,7 +42,7 @@ strategy first presented at ICAPS14, combined with PARIS.
 """
 from rao.raostar import RAOStar
 from rao.export import policy_to_rmpyl
-from rao.models.rmpylmodel import BaseRMPyLModel,StrongStrongRMPyLModel
+from rao.models.rmpylmodel import BaseRMPyLUnraveler,StrongStrongRMPyLUnraveler
 
 from clark.clark_utils import rmpyl_post_processing,import_function_from_module_file
 
@@ -57,11 +57,11 @@ def rmpyl_clark(prog,out_file,svg,schedule,cc,cc_type,terminal_prob,randomizatio
     strategy first presented at ICAPS14, combined with PARIS.
     """
     if schedule:
-        rmpyl_model = StrongStrongRMPyLModel(prog,verbose=verbose)
+        rmpyl_model = StrongStrongRMPyLUnraveler(verbose=verbose)
     else:
-        rmpyl_model = BaseRMPyLModel(prog,verbose=verbose)
+        rmpyl_model = BaseRMPyLUnraveler(verbose=verbose)
 
-    b0 = rmpyl_model.get_initial_belief()
+    b0 = rmpyl_model.get_initial_belief(prog)
 
     planner = RAOStar(rmpyl_model,node_name='id',cc=cc,cc_type=cc_type,
                       terminal_prob=terminal_prob,randomization=randomization,

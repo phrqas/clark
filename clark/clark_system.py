@@ -79,7 +79,8 @@ class CLARK(object):
                 dot_policy = policy_to_dot(output_dict['explicit'],output_dict['policy'])
                 dot_policy.write(policy_file+'.svg',format='svg')
 
-            output_dict['output_file']=args.output
+            #Generates output tpn
+            output_dict['rmpyl'].to_ptpn(filename=args.output)           
 
         except:
             success,output_dict = False,None

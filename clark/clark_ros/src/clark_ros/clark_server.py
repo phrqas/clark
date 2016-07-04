@@ -62,7 +62,7 @@ class CLARKServer(object):
 
         if resp.success:
             rospy.loginfo('Call to CLARK completed successfully!')
-            resp.tpn = output_dict['rmpyl'].to_ptpn(filename=output_dict['output_file'])
+            resp.tpn = output_dict['rmpyl'].to_ptpn(filename=None)
             resp.performance_dict = [KeyValue(str(k),str(v))for k,v in output_dict['performance'].items()]
         else:
             rospy.logwarn('Call to CLARK failed...')
